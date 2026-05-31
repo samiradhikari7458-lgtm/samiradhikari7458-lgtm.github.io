@@ -1,4 +1,21 @@
-1. Add About Me section
-2. Add Projects section
-3. Add Contact form
-4. Update CSS for professional look
+# Samir Adhikari — Portfolio Tasks
+# Last updated: 2026
+
+COMPLETED:
+[x] Build premium portfolio website
+[x] Add profile photo
+[x] Add real email and GitHub links
+[x] Document build process in README
+[x] Deploy to GitHub Pages
+
+IN PROGRESS:
+[ ] Add live demo links for all projects
+[ ] Add LinkedIn profile URL
+[ ] Add Resume PDF download
+[ ] Add project screenshots
+
+PROJECTS STATUS:
+[x] Manifest Agent — completed
+[ ] CorpMind AI — active
+[ ] Civic Complaint Platform — active
+[ ] Bureaucracy Navigator — active/thesis
