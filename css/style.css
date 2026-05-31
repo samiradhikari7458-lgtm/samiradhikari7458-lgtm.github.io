@@ -3,3 +3,5 @@ h1 { color: #007bff; }
 #about { background: #f9f9f9; padding: 20px; border-radius: 8px; }
 #projects { margin-top: 40px; }
 .project-card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; margin-top: 10px; }
+#contact { margin-top: 40px; padding: 20px; background: #eee; }
+form { display: flex; flex-direction: column; gap: 10px; max-width: 300px; }
