@@ -159,8 +159,64 @@
             From Social Science<br/>to <em>AI Architecture</em>
           </h2>
           <p class="body-text reveal d2">
-            I'm Samir Adhikari — a Master's student at <strong>Kyoto College of Graduate Studies for Informatics (KCGI)</strong>, pursuing an AI concentration. My academic journey started with a Bachelor's in Social Science, which gave me a unique lens for understanding technology's human impact.
+            I'm Samir Adhikari — a Master's student at <button class="inline-expand-btn" onclick="toggleExpand('kcgi-panel')" aria-expanded="false">Kyoto College of Graduate Studies for Informatics (KCGI) <span class="expand-arrow">▾</span></button>, pursuing an <button class="inline-expand-btn" onclick="toggleExpand('ai-panel')" aria-expanded="false">AI concentration <span class="expand-arrow">▾</span></button>. My academic journey started with a Bachelor's in Social Science, which gave me a unique lens for understanding technology's human impact.
           </p>
+
+          <!-- KCGI Expandable Panel -->
+          <div class="expand-panel" id="kcgi-panel">
+            <div class="expand-panel-inner">
+              <div class="ep-header">
+                <span class="ep-icon">🏛️</span>
+                <div>
+                  <div class="ep-title">Kyoto College of Graduate Studies for Informatics</div>
+                  <div class="ep-sub">KCGI · Established 2004 · Kyoto, Japan</div>
+                </div>
+                <button class="ep-close" onclick="toggleExpand('kcgi-panel')">✕</button>
+              </div>
+              <div class="ep-grid">
+                <div class="ep-stat"><span class="ep-stat-n">2004</span><span class="ep-stat-l">Established</span></div>
+                <div class="ep-stat"><span class="ep-stat-n">1st</span><span class="ep-stat-l">IT Grad School in Japan</span></div>
+                <div class="ep-stat"><span class="ep-stat-n">1963</span><span class="ep-stat-l">KCG Founded</span></div>
+                <div class="ep-stat"><span class="ep-stat-n">RIT</span><span class="ep-stat-l">US Partnership</span></div>
+              </div>
+              <p class="ep-text">KCGI was established in <strong>2004</strong> as <strong>Japan's first IT professional graduate school</strong>, built on the legacy of Kyoto Computer Gakuin (KCG) — Japan's first private computer education institution founded in <strong>1963</strong>. Located near Kyoto Station in Minami Ward, KCGI is approved by Japan's Ministry of Education and accredited by JABEE.</p>
+              <p class="ep-text">KCGI collaborates globally with the <strong>Rochester Institute of Technology (RIT)</strong> and <strong>MIT</strong>. Its mission is to train highly skilled IT professionals — CIOs and applied technology leaders — combining rigorous computer science with business and management education.</p>
+              <div class="ep-tags"><span>Founded 2004</span><span>Ministry Approved</span><span>JABEE Accredited</span><span>RIT Partnership</span><span>MIT Collaboration</span><span>Kyoto Station · Minami Ward</span></div>
+            </div>
+          </div>
+
+          <!-- AI Concentration Expandable Panel -->
+          <div class="expand-panel" id="ai-panel">
+            <div class="expand-panel-inner">
+              <div class="ep-header">
+                <span class="ep-icon">🤖</span>
+                <div>
+                  <div class="ep-title">AI Concentration</div>
+                  <div class="ep-sub">M.S. Information Technology · KCGI</div>
+                </div>
+                <button class="ep-close" onclick="toggleExpand('ai-panel')">✕</button>
+              </div>
+              <div class="ep-grid">
+                <div class="ep-stat"><span class="ep-stat-n">M.S.</span><span class="ep-stat-l">Degree</span></div>
+                <div class="ep-stat"><span class="ep-stat-n">AI</span><span class="ep-stat-l">Concentration</span></div>
+                <div class="ep-stat"><span class="ep-stat-n">2yr</span><span class="ep-stat-l">Program</span></div>
+                <div class="ep-stat"><span class="ep-stat-n">JP+EN</span><span class="ep-stat-l">Bilingual</span></div>
+              </div>
+              <p class="ep-text">The <strong>AI Concentration</strong> is a Master of Science in Information Technology program focused on applied artificial intelligence — bridging theoretical foundations with real-world deployment of intelligent systems.</p>
+              <div class="ep-course-label">Core Subjects</div>
+              <div class="ep-course-grid">
+                <div class="ep-course">🧠 Fundamentals of AI</div>
+                <div class="ep-course">🐍 Computer Programming (Python)</div>
+                <div class="ep-course">📊 Machine Learning</div>
+                <div class="ep-course">🔍 Pattern Recognition</div>
+                <div class="ep-course">💬 Natural Language Processing</div>
+                <div class="ep-course">⚙️ Combinatorial Optimization</div>
+                <div class="ep-course">🤖 Multi-Agent Systems</div>
+                <div class="ep-course">📐 Applied Information Technology</div>
+              </div>
+              <div class="ep-tags"><span>LangGraph</span><span>Claude API</span><span>RAG Pipelines</span><span>Vector Databases</span><span>Agentic AI</span></div>
+            </div>
+          </div>
           <p class="body-text reveal d2">
             Living in Kyoto Minami Ward, I build AI systems that bridge intelligent automation with real societal problems — from navigating Japanese bureaucracy as a foreign resident to reporting environmental issues in Japanese cities.
           </p>

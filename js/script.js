@@ -230,6 +230,24 @@
   document.head.appendChild(style);
 
 
+  
+  /* ── INLINE EXPAND PANELS ───────────────── */
+  window.toggleExpand = function(id) {
+    const panel = document.getElementById(id);
+    const isOpen = panel.classList.contains('open');
+    document.querySelectorAll('.expand-panel').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.inline-expand-btn').forEach(b => b.setAttribute('aria-expanded','false'));
+    if (!isOpen) {
+      panel.classList.add('open');
+      document.querySelectorAll('.inline-expand-btn').forEach(b => {
+        if (b.getAttribute('onclick') && b.getAttribute('onclick').includes(id)) {
+          b.setAttribute('aria-expanded','true');
+        }
+      });
+      setTimeout(() => panel.scrollIntoView({ behavior:'smooth', block:'nearest' }), 150);
+    }
+  };
+
   /* ── SMOOTH SECTION SCROLL ON NAV CLICK ───── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
