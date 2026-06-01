@@ -1,3 +1,90 @@
+
+  /* ── HERO CANVAS PARTICLE BACKGROUND ────── */
+  (function initCanvas() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const PARTICLE_COUNT = 90;
+    const TEAL  = '45,212,191';
+    const AMBER = '245,158,11';
+
+    const particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+      x:    Math.random() * canvas.width,
+      y:    Math.random() * canvas.height,
+      r:    Math.random() * 1.8 + 0.3,
+      vx:   (Math.random() - 0.5) * 0.35,
+      vy:   (Math.random() - 0.5) * 0.35,
+      color: Math.random() > 0.85 ? AMBER : TEAL,
+      alpha: Math.random() * 0.5 + 0.15,
+    }));
+
+    // Connection lines between nearby particles
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            const opacity = (1 - dist / 120) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(${particles[i].color},${opacity})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw connections first
+      drawConnections();
+
+      // Draw particles
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Wrap around edges
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        // Glow effect
+        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+        grd.addColorStop(0, `rgba(${p.color},${p.alpha})`);
+        grd.addColorStop(1, `rgba(${p.color},0)`);
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color},${p.alpha + 0.3})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+
 /* ═══════════════════════════════════════
    SAMIR ADHIKARI — PORTFOLIO SCRIPT
    script.js — All interactivity
